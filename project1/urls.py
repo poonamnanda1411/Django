@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import employee.views
-from employee.views import create_view
+from employee.views import *
+#from employee.views import list_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('<id>/delete', delete_view,name='Employee'), 
+    path('<id>/update', update_view,name='Employee'), 
+    path('<id>',detail_view, name='Employee'),
     path('',create_view, name='Employee'),
+    path('',list_view, name='Employee'),
 ]
