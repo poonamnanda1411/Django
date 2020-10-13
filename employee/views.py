@@ -69,3 +69,11 @@ def delete_view(request, id):
   
     return render(request, "employees/delete_view.html", context)     
     
+def home(request):
+    return render(request,"employees/home.html",{'name':'Poonam'})
+    
+def add(request):
+    val1=request.POST['num1']
+    val2=request.POST['num2']
+    res=int(val1)+int(val2)
+    return render(request,"employees/result.html",{'result':res})
